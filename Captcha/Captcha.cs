@@ -17,6 +17,8 @@ namespace Captcha
 
         public string GetLeftOperand()
         {
+            if (leftOperand == 9)
+                return "9";
             if (leftOperand == 2)
                 return "2";
             return "1";
