@@ -33,5 +33,12 @@ namespace UnitTestCaptcha
             captcha = new _Captcha(patternDummy, 9, operatorValueDummy, rightOperandDummy);
             Assert.AreEqual("9", captcha.GetLeftOperand());
         }
+
+        [Test]
+        public void GetLeftOperand_ShouldThrowArgumentOutOfRangeException_WhenInputIsMinus1()
+        {
+            captcha = new _Captcha(patternDummy, -1, operatorValueDummy, rightOperandDummy);
+            Assert.Throws<ArgumentOutOfRangeException>(() => captcha.GetLeftOperand());
+        }
     }
 }
