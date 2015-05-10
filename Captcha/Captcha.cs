@@ -8,6 +8,7 @@ namespace Captcha
 {
     public class Captcha
     {
+        int pattern;
         int leftOperand;
         int rightOperand;
         int operatorValue;
@@ -19,6 +20,7 @@ namespace Captcha
 
         public Captcha(int pattern, int leftOperand, int operatorValue, int rightOperand)
         {
+            this.pattern = pattern;
             this.leftOperand = leftOperand;
             this.operatorValue = operatorValue;
             this.rightOperand = rightOperand;
@@ -35,6 +37,8 @@ namespace Captcha
         {
             if (rightOperand < 0 || rightOperand > 9)
                 throw new ArgumentOutOfRangeException();
+            if (pattern == 1)
+                return "1";
             return numberWordList[rightOperand];
         }
 

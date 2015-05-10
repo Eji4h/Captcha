@@ -9,7 +9,7 @@ namespace UnitTestCaptcha
     {
         _Captcha captcha;
 
-        int patternDummy = 1,
+        int patternDummy = 2,
             leftOperandDummy = 1,
             operatorValueDummy = 1,
             rightOperandDummy = 1;
@@ -122,6 +122,13 @@ namespace UnitTestCaptcha
 
             captcha = new _Captcha(patternDummy, leftOperandDummy, 4, rightOperandDummy);
             Assert.Throws<ArgumentOutOfRangeException>(() => captcha.GetOperator());
+        }
+
+        [Test]
+        public void GetRightOperand_ShouldBe1_WhenPatternIs1_And_InputIs1()
+        {
+            captcha = new _Captcha(1, leftOperandDummy, operatorValueDummy, 1);
+            Assert.AreEqual("1", captcha.GetRightOperand());
         }
     }
 }
