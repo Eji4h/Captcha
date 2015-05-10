@@ -10,6 +10,7 @@ namespace UnitTestCaptcha
         _Captcha captcha;
 
         int patternDummy = 1,
+            leftOperandDummy = 1,
             operatorValueDummy = 1,
             rightOperandDummy = 1;
 
@@ -51,7 +52,7 @@ namespace UnitTestCaptcha
         [Test]
         public void GetRightOperand_ShouldBeONE_WhenInputIs1()
         {
-            captcha = new _Captcha(patternDummy, 1, operatorValueDummy, 1);
+            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 1);
             Assert.AreEqual("ONE", captcha.GetRightOperand());
         }
     }

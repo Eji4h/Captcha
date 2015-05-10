@@ -8,11 +8,13 @@ namespace Captcha
 {
     public class Captcha
     {
-        private int leftOperand;
+        int leftOperand;
+        int rightOperand;
 
         public Captcha(int pattern, int leftOperand, int operatorValue, int rightOperand)
         {
             this.leftOperand = leftOperand;
+            this.rightOperand = rightOperand;
         }
 
         public string GetLeftOperand()
