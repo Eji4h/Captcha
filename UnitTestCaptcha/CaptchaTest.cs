@@ -158,5 +158,12 @@ namespace UnitTestCaptcha
             captcha = new _Captcha(1, 2, 2, 4);
             Assert.AreEqual("TWO * 4", captcha.GetCaptcha());
         }
+
+        [Test]
+        public void GetCaptcha_ShouldBe7MinusEIGHT_WhenPatternIs2_LeftOperandIs7_OperatorIs3_RightOperandIs8()
+        {
+            captcha = new _Captcha(2, 7, 3, 8);
+            Assert.AreEqual("7 - EIGHT", captcha.GetCaptcha());
+        }
     }
 }
