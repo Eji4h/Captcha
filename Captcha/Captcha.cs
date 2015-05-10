@@ -21,5 +21,10 @@ namespace Captcha
                 throw new ArgumentOutOfRangeException();
             return leftOperand.ToString();
         }
+
+        public string GetRightOperand()
+        {
+            return "ONE";
+        }
     }
 }

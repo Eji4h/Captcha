@@ -47,5 +47,12 @@ namespace UnitTestCaptcha
             captcha = new _Captcha(patternDummy, 10, operatorValueDummy, rightOperandDummy);
             Assert.Throws<ArgumentOutOfRangeException>(() => captcha.GetLeftOperand());
         }
+
+        [Test]
+        public void GetRightOperand_ShouldBeONE_WhenInputIs1()
+        {
+            captcha = new _Captcha(patternDummy, 1, operatorValueDummy, 1);
+            Assert.AreEqual("ONE", captcha.GetRightOperand());
+        }
     }
 }
