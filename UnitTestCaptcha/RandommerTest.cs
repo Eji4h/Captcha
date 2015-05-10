@@ -12,10 +12,17 @@ namespace UnitTestCaptcha
     class RandommerTest
     {
         Randommer randommer = new Randommer();
+
         [Test]
         public void GetPatternIsRandomInRange()
         {
             Assert.That(randommer.GetPattern(), Is.InRange(1, 2));
+        }
+
+        [Test]
+        public void GetOperandnIsRandomInRange()
+        {
+            Assert.That(randommer.GetOperand(), Is.InRange(0, 9));
         }
     }
 }
