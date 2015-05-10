@@ -151,5 +151,12 @@ namespace UnitTestCaptcha
             captcha = new _Captcha(1, 1, 1, 1);
             Assert.AreEqual("ONE + 1", captcha.GetCaptcha());
         }
+
+        [Test]
+        public void GetCaptcha_ShouldBeTWOMultiply4_WhenPatternIs1_LeftOperandIs2_OperatorIs2_RightOperandIs4()
+        {
+            captcha = new _Captcha(1, 2, 2, 4);
+            Assert.AreEqual("TWO * 4", captcha.GetCaptcha());
+        }
     }
 }

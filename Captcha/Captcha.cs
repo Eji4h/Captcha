@@ -66,7 +66,7 @@ namespace Captcha
 
         public string GetCaptcha()
         {
-            return "ONE + 1";
+            return GetLeftOperand() + " " + GetOperator() + " " + GetRightOperand();
         }
     }
 }
