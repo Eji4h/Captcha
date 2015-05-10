@@ -42,6 +42,8 @@ namespace Captcha
         {
             if (operatorValue == 2)
                 return "*";
+            if (operatorValue == 3)
+                return "-";
             return "+";
         }
     }

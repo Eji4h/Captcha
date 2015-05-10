@@ -106,5 +106,12 @@ namespace UnitTestCaptcha
             captcha = new _Captcha(patternDummy, leftOperandDummy, 2, rightOperandDummy);
             Assert.AreEqual("*", captcha.GetOperator());
         }
+
+        [Test]
+        public void Operator_ShouldBeMinus_WhenInputIs3()
+        {
+            captcha = new _Captcha(patternDummy, leftOperandDummy, 3, rightOperandDummy);
+            Assert.AreEqual("-", captcha.GetOperator());
+        }
     }
 }
