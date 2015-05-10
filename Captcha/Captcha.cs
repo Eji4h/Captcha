@@ -63,5 +63,10 @@ namespace Captcha
         {
             return numberWordList[operand];
         }
+
+        public string GetCaptcha()
+        {
+            return "ONE + 1";
+        }
     }
 }

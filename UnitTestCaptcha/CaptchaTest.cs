@@ -144,5 +144,12 @@ namespace UnitTestCaptcha
             captcha = new _Captcha(1, 1, operatorValueDummy, rightOperandDummy);
             Assert.AreEqual("ONE", captcha.GetLeftOperand());
         }
+
+        [Test]
+        public void GetCaptcha_ShouldBeONEPlus1_WhenPatternIs1_LeftOperandIs1_OperatorIs1_RightOperandIs1()
+        {
+            captcha = new _Captcha(1, 1, 1, 1);
+            Assert.AreEqual("ONE + 1", captcha.GetCaptcha());
+        }
     }
 }
