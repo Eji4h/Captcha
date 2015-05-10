@@ -79,5 +79,15 @@ namespace UnitTestCaptcha
             captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 9);
             Assert.AreEqual("NINE", captcha.GetRightOperand());
         }
+
+        [Test]
+        public void GetLeftOperand_ShouldThrowArgumentOutOfRangeException_WhenInputIsOutOfRange()
+        {
+            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, -1);
+            Assert.Throws<ArgumentOutOfRangeException>(() => captcha.GetRightOperand());
+
+            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 10);
+            Assert.Throws<ArgumentOutOfRangeException>(() => captcha.GetRightOperand());
+        }
     }
 }

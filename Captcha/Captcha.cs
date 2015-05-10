@@ -31,6 +31,8 @@ namespace Captcha
 
         public string GetRightOperand()
         {
+            if (rightOperand < 0 || rightOperand > 9)
+                throw new ArgumentOutOfRangeException();
             return numberWordList[rightOperand - 1];
         }
     }
