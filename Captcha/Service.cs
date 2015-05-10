@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace Captcha
 {
-    class Service
+    public class Service
     {
+        IRandommer randommer;
+
+        public void SetRandommer(IRandommer randommer)
+        {
+            this.randommer = randommer;
+        }
+
+        public string GetCaptcha()
+        {
+            return new Captcha(randommer.GetPattern(), randommer.GetOperand(), 
+                randommer.GetOperator(), randommer.GetOperand()).GetCaptcha();
+        }
     }
 }

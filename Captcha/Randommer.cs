@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Captcha
 {
-    public class Randommer
+    public class Randommer : IRandommer
     {
         Random random = new Random();
 
