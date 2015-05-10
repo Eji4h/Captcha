@@ -30,6 +30,8 @@ namespace Captcha
                 return "TWO";
             if (rightOperand == 3)
                 return "THREE";
+            if (rightOperand == 9)
+                return "NINE";
             return "ONE";
         }
     }

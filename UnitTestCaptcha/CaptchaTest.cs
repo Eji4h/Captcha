@@ -69,5 +69,12 @@ namespace UnitTestCaptcha
             captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 3);
             Assert.AreEqual("THREE", captcha.GetRightOperand());
         }
+
+        [Test]
+        public void GetRightOperand_ShouldBeNINE_WhenInputIs9()
+        {
+            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 9);
+            Assert.AreEqual("NINE", captcha.GetRightOperand());
+        }
     }
 }
