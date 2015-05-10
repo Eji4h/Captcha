@@ -50,34 +50,6 @@ namespace UnitTestCaptcha
         }
 
         [Test]
-        public void GetRightOperand_ShouldBeONE_WhenInputIs1()
-        {
-            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 1);
-            Assert.AreEqual("ONE", captcha.GetRightOperand());
-        }
-
-        [Test]
-        public void GetRightOperand_ShouldBeTWO_WhenInputIs2()
-        {
-            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 2);
-            Assert.AreEqual("TWO", captcha.GetRightOperand());
-        }
-
-        [Test]
-        public void GetRightOperand_ShouldBeTHREE_WhenInputIs3()
-        {
-            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 3);
-            Assert.AreEqual("THREE", captcha.GetRightOperand());
-        }
-
-        [Test]
-        public void GetRightOperand_ShouldBeNINE_WhenInputIs9()
-        {
-            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 9);
-            Assert.AreEqual("NINE", captcha.GetRightOperand());
-        }
-
-        [Test]
         public void GetRightOperand_ShouldBeNumberWord_WhenInputInRange()
         {
             captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 1);
