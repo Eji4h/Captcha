@@ -99,5 +99,12 @@ namespace UnitTestCaptcha
             captcha = new _Captcha(patternDummy, leftOperandDummy, 1, rightOperandDummy);
             Assert.AreEqual("+", captcha.GetOperator());
         }
+
+        [Test]
+        public void Operator_ShouldBeMultiply_WhenInputIs2()
+        {
+            captcha = new _Captcha(patternDummy, leftOperandDummy, 2, rightOperandDummy);
+            Assert.AreEqual("*", captcha.GetOperator());
+        }
     }
 }

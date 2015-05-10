@@ -10,6 +10,7 @@ namespace Captcha
     {
         int leftOperand;
         int rightOperand;
+        int operatorValue;
 
         List<string> numberWordList = new List<string>()
         {
@@ -19,6 +20,7 @@ namespace Captcha
         public Captcha(int pattern, int leftOperand, int operatorValue, int rightOperand)
         {
             this.leftOperand = leftOperand;
+            this.operatorValue = operatorValue;
             this.rightOperand = rightOperand;
         }
 
@@ -38,6 +40,8 @@ namespace Captcha
 
         public object GetOperator()
         {
+            if (operatorValue == 2)
+                return "*";
             return "+";
         }
     }
