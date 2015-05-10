@@ -66,7 +66,7 @@ namespace Captcha
 
         public string GetCaptcha()
         {
-            return GetLeftOperand() + " " + GetOperator() + " " + GetRightOperand();
+            return string.Format("{0} {1} {2}", GetLeftOperand(), GetOperator(), GetRightOperand());
         }
     }
 }
