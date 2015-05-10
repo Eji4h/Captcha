@@ -28,8 +28,7 @@ namespace Captcha
 
         public string GetLeftOperand()
         {
-            if (leftOperand < 0 || leftOperand > 9)
-                throw new ArgumentOutOfRangeException();
+            ValidateInRangeZeroToNine(leftOperand);
             if (pattern == 1)
                 return numberWordList[leftOperand];
             return leftOperand.ToString();
@@ -37,8 +36,7 @@ namespace Captcha
 
         public string GetRightOperand()
         {
-            if (rightOperand < 0 || rightOperand > 9)
-                throw new ArgumentOutOfRangeException();
+            ValidateInRangeZeroToNine(leftOperand);
             if (pattern == 1)
                 return rightOperand.ToString();
             return numberWordList[rightOperand];
@@ -46,13 +44,19 @@ namespace Captcha
 
         public string GetOperator()
         {
-            switch(operatorValue)
+            switch (operatorValue)
             {
                 case 1: return "+";
                 case 2: return "*";
                 case 3: return "-";
                 default: throw new ArgumentOutOfRangeException();
             }
+        }
+
+        void ValidateInRangeZeroToNine(int operand)
+        {
+            if (operand < 0 || operand > 9)
+                throw new ArgumentOutOfRangeException();
         }
     }
 }
