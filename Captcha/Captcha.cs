@@ -38,13 +38,15 @@ namespace Captcha
             return numberWordList[rightOperand];
         }
 
-        public object GetOperator()
+        public string GetOperator()
         {
-            if (operatorValue == 2)
-                return "*";
-            if (operatorValue == 3)
-                return "-";
-            return "+";
+            switch(operatorValue)
+            {
+                case 1: return "+";
+                case 2: return "*";
+                case 3: return "-";
+                default: return "";
+            }
         }
     }
 }
