@@ -28,6 +28,8 @@ namespace Captcha
         {
             if (rightOperand == 2)
                 return "TWO";
+            if (rightOperand == 3)
+                return "THREE";
             return "ONE";
         }
     }
