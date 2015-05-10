@@ -35,5 +35,10 @@ namespace Captcha
                 throw new ArgumentOutOfRangeException();
             return numberWordList[rightOperand];
         }
+
+        public object GetOperator()
+        {
+            return "+";
+        }
     }
 }

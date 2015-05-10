@@ -92,5 +92,12 @@ namespace UnitTestCaptcha
             captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 10);
             Assert.Throws<ArgumentOutOfRangeException>(() => captcha.GetRightOperand());
         }
+
+        [Test]
+        public void Operator_ShouldBePlus_WhenInputIs1()
+        {
+            captcha = new _Captcha(patternDummy, leftOperandDummy, 1, rightOperandDummy);
+            Assert.AreEqual("+", captcha.GetOperator());
+        }
     }
 }
