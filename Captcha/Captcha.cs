@@ -38,7 +38,11 @@ namespace Captcha
             if (rightOperand < 0 || rightOperand > 9)
                 throw new ArgumentOutOfRangeException();
             if (pattern == 1)
+            {
+                if (rightOperand == 2)
+                    return "2";
                 return "1";
+            }
             return numberWordList[rightOperand];
         }
 
