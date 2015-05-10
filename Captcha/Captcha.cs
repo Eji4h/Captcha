@@ -11,6 +11,11 @@ namespace Captcha
         int leftOperand;
         int rightOperand;
 
+        List<string> numberWordList = new List<string>()
+        {
+            "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"
+        };
+
         public Captcha(int pattern, int leftOperand, int operatorValue, int rightOperand)
         {
             this.leftOperand = leftOperand;
@@ -26,13 +31,7 @@ namespace Captcha
 
         public string GetRightOperand()
         {
-            if (rightOperand == 2)
-                return "TWO";
-            if (rightOperand == 3)
-                return "THREE";
-            if (rightOperand == 9)
-                return "NINE";
-            return "ONE";
+            return numberWordList[rightOperand - 1];
         }
     }
 }

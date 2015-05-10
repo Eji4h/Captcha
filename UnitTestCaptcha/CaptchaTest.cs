@@ -76,5 +76,36 @@ namespace UnitTestCaptcha
             captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 9);
             Assert.AreEqual("NINE", captcha.GetRightOperand());
         }
+
+        [Test]
+        public void GetRightOperand_ShouldBeNumberWord_WhenInputInRange()
+        {
+            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 1);
+            Assert.AreEqual("ONE", captcha.GetRightOperand());
+
+            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 2);
+            Assert.AreEqual("TWO", captcha.GetRightOperand());
+
+            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 3);
+            Assert.AreEqual("THREE", captcha.GetRightOperand());
+
+            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 4);
+            Assert.AreEqual("FOUR", captcha.GetRightOperand());
+
+            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 5);
+            Assert.AreEqual("FIVE", captcha.GetRightOperand());
+
+            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 6);
+            Assert.AreEqual("SIX", captcha.GetRightOperand());
+
+            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 7);
+            Assert.AreEqual("SEVEN", captcha.GetRightOperand());
+
+            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 8);
+            Assert.AreEqual("EIGHT", captcha.GetRightOperand());
+
+            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 9);
+            Assert.AreEqual("NINE", captcha.GetRightOperand());
+        }
     }
 }
