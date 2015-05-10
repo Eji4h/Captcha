@@ -30,6 +30,8 @@ namespace Captcha
         {
             if (leftOperand < 0 || leftOperand > 9)
                 throw new ArgumentOutOfRangeException();
+            if (pattern == 1)
+                return "ONE";
             return leftOperand.ToString();
         }
 
