@@ -19,5 +19,10 @@ namespace Captcha
         {
             return random.Next(0, 10);
         }
+
+        public int GetOperator()
+        {
+            return random.Next(1, 3);
+        }
     }
 }

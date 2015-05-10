@@ -24,5 +24,11 @@ namespace UnitTestCaptcha
         {
             Assert.That(randommer.GetOperand(), Is.InRange(0, 9));
         }
+
+        [Test]
+        public void GetOperatorIsRandomInRange()
+        {
+            Assert.That(randommer.GetOperator(), Is.InRange(1, 3));
+        }
     }
 }
