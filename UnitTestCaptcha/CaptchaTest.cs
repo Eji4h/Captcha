@@ -55,5 +55,12 @@ namespace UnitTestCaptcha
             captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 1);
             Assert.AreEqual("ONE", captcha.GetRightOperand());
         }
+
+        [Test]
+        public void GetRightOperand_ShouldBeTWO_WhenInputIs2()
+        {
+            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 2);
+            Assert.AreEqual("TWO", captcha.GetRightOperand());
+        }
     }
 }

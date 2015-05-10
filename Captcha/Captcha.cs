@@ -26,6 +26,8 @@ namespace Captcha
 
         public string GetRightOperand()
         {
+            if (rightOperand == 2)
+                return "TWO";
             return "ONE";
         }
     }
