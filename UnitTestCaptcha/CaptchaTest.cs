@@ -52,6 +52,9 @@ namespace UnitTestCaptcha
         [Test]
         public void GetRightOperand_ShouldBeNumberWord_WhenInputInRange()
         {
+            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 0);
+            Assert.AreEqual("ZERO", captcha.GetRightOperand());
+
             captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 1);
             Assert.AreEqual("ONE", captcha.GetRightOperand());
 

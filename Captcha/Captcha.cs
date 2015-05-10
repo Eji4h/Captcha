@@ -13,7 +13,7 @@ namespace Captcha
 
         List<string> numberWordList = new List<string>()
         {
-            "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"
+            "ZERO", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"
         };
 
         public Captcha(int pattern, int leftOperand, int operatorValue, int rightOperand)
@@ -33,7 +33,7 @@ namespace Captcha
         {
             if (rightOperand < 0 || rightOperand > 9)
                 throw new ArgumentOutOfRangeException();
-            return numberWordList[rightOperand - 1];
+            return numberWordList[rightOperand];
         }
     }
 }
