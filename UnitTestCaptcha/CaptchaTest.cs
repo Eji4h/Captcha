@@ -113,5 +113,15 @@ namespace UnitTestCaptcha
             captcha = new _Captcha(patternDummy, leftOperandDummy, 3, rightOperandDummy);
             Assert.AreEqual("-", captcha.GetOperator());
         }
+
+        [Test]
+        public void Operator_ShouldThrowArgumentOutOfRangeException_WhenInputIsOutOfRange()
+        {
+            captcha = new _Captcha(patternDummy, leftOperandDummy, 0, rightOperandDummy);
+            Assert.Throws<ArgumentOutOfRangeException>(() => captcha.GetOperator());
+
+            captcha = new _Captcha(patternDummy, leftOperandDummy, 4, rightOperandDummy);
+            Assert.Throws<ArgumentOutOfRangeException>(() => captcha.GetOperator());
+        }
     }
 }
