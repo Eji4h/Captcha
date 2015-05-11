@@ -19,7 +19,10 @@ namespace Captcha
         int rightOperand;
         int operatorValue;
 
-        List<string> numberWordList = new List<string>()
+        const int minOperand = 0;
+        const int maxOperand = 9;
+
+        static readonly List<string> numberWordList = new List<string>()
         {
             "ZERO", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"
         };
