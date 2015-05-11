@@ -81,7 +81,7 @@ namespace UnitTestCaptcha
         }
 
         [Test]
-        public void GetLeftOperand_ShouldThrowArgumentOutOfRangeException_WhenInputIsOutOfRange()
+        public void GetRightOperand_ShouldThrowArgumentOutOfRangeException_WhenInputIsOutOfRange()
         {
             captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 0);
             Assert.Throws<ArgumentOutOfRangeException>(() => captcha.GetRightOperand());
