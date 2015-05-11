@@ -19,12 +19,12 @@ namespace Captcha
         int rightOperand;
         int operatorValue;
 
-        const int minOperand = 0;
+        const int minOperand = 1;
         const int maxOperand = 9;
 
         static readonly List<string> numberWordList = new List<string>()
         {
-            "ZERO", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"
+            "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"
         };
 
         public Captcha(int pattern, int leftOperand, int operatorValue, int rightOperand)
@@ -64,13 +64,13 @@ namespace Captcha
 
         void ValidateInRangeZeroToNine(int operand)
         {
-            if (operand < 0 || operand > 9)
+            if (operand < minOperand || operand > maxOperand)
                 throw new ArgumentOutOfRangeException();
         }
 
         string GetOperandWord(int operand)
         {
-            return numberWordList[operand];
+            return numberWordList[operand - 1];
         }
 
         public string GetCaptcha()

@@ -36,9 +36,9 @@ namespace UnitTestCaptcha
         }
 
         [Test]
-        public void GetLeftOperand_ShouldThrowArgumentOutOfRangeException_WhenInputIsMinus1()
+        public void GetLeftOperand_ShouldThrowArgumentOutOfRangeException_WhenInputIsZero()
         {
-            captcha = new _Captcha(patternDummy, -1, operatorValueDummy, rightOperandDummy);
+            captcha = new _Captcha(patternDummy, 0, operatorValueDummy, rightOperandDummy);
             Assert.Throws<ArgumentOutOfRangeException>(() => captcha.GetLeftOperand());
         }
 
@@ -52,9 +52,6 @@ namespace UnitTestCaptcha
         [Test]
         public void GetRightOperand_ShouldBeNumberWord_WhenInputInRange()
         {
-            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 0);
-            Assert.AreEqual("ZERO", captcha.GetRightOperand());
-
             captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 1);
             Assert.AreEqual("ONE", captcha.GetRightOperand());
 
@@ -86,7 +83,7 @@ namespace UnitTestCaptcha
         [Test]
         public void GetLeftOperand_ShouldThrowArgumentOutOfRangeException_WhenInputIsOutOfRange()
         {
-            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, -1);
+            captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 0);
             Assert.Throws<ArgumentOutOfRangeException>(() => captcha.GetRightOperand());
 
             captcha = new _Captcha(patternDummy, leftOperandDummy, operatorValueDummy, 10);
