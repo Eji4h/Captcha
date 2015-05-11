@@ -8,7 +8,13 @@ namespace Captcha
 {
     public class Captcha
     {
-        int pattern;
+        enum Pattern
+        {
+            WordOperatorNumber = 1,
+            NumberOperatorWord = 2
+        }
+
+        Pattern pattern;
         int leftOperand;
         int rightOperand;
         int operatorValue;
@@ -20,7 +26,7 @@ namespace Captcha
 
         public Captcha(int pattern, int leftOperand, int operatorValue, int rightOperand)
         {
-            this.pattern = pattern;
+            this.pattern = (Pattern)pattern;
             this.leftOperand = leftOperand;
             this.operatorValue = operatorValue;
             this.rightOperand = rightOperand;
@@ -29,7 +35,7 @@ namespace Captcha
         public string GetLeftOperand()
         {
             ValidateInRangeZeroToNine(leftOperand);
-            if (pattern == 1)
+            if (pattern == Pattern.WordOperatorNumber)
                 return GetOperandWord(leftOperand);
             return leftOperand.ToString();
         }
@@ -37,9 +43,9 @@ namespace Captcha
         public string GetRightOperand()
         {
             ValidateInRangeZeroToNine(leftOperand);
-            if (pattern == 1)
-                return rightOperand.ToString();
-            return GetOperandWord(rightOperand);
+            if (pattern == Pattern.NumberOperatorWord)
+                return GetOperandWord(rightOperand);
+            return rightOperand.ToString();
         }
 
         public string GetOperator()
